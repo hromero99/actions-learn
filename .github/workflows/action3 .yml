@@ -10,6 +10,8 @@ jobs:
           POSTGRES_PASSWORD: basic
           POSTGRES_DB: basic
           POSTGRES_USER: basic
+        ports:
+          - 5432:5432
     env:
       PG_DBNAME: basic
       PG_USER: basic
