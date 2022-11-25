@@ -1,0 +1,37 @@
+name: install-requirements
+on: [push]
+jobs:
+  build-image-requirements:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_PASSWORD: basic
+          POSTGRES_DB: basic
+          POSTGRES_USER: basic
+        ports:
+          - 5432:5432
+    env:
+          PG_DBNAME: basic
+          PG_DBUSER: basic
+          PG_DBPASS: basic
+          PG_HOST: "127.0.0.1"
+          PG_PORT: 5432
+          SECRET: "alskdhaslkdhlk"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Install requirements
+        run: pip install -r requirements.txt
+      - name: Run migrations 
+        run: sleep 6 && python3 manage.py makemigrations && python3 manage.py migrate
+      - name: Up server and test
+        run: |
+          python3 manage.py runserver 0.0.0.0:8000 &
+          sleep 6
+      - name: Exec python script
+        run: 
+          python3 test2.py  
