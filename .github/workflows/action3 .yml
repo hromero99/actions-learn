@@ -32,4 +32,6 @@ jobs:
         run: |
           python3 manage.py runserver 0.0.0.0:8000 &
           sleep 6
+      - name: Exec python script
+        run: 
           python3 test.py  
