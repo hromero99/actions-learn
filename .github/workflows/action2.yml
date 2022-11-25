@@ -1,0 +1,12 @@
+name: install-requirements
+on: [push]
+jobs:
+  build-image-requirements:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@2
+        with:
+          python-version: "3.9"
+      - name: Install requirements
+        run: pip install -r requirements.txt
