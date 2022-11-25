@@ -14,7 +14,7 @@ jobs:
           - 5432:5432
     env:
           PG_DBNAME: basic
-          PG_USER: basic
+          PG_DBUSER: basic
           PG_DBPASS: basic
           PG_HOST: "127.0.0.1"
           PG_PORT: 5432
