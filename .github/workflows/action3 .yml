@@ -21,9 +21,9 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Run migrations 
-        run: python3 manage.py makemigrations && python3 manage.py migrate
+        run: sleep 6 && python3 manage.py makemigrations && python3 manage.py migrate
       - name: Up server and test
-        run: sleep 6 &&python3 manage.py runserver 0.0.0.0:8000 && python3 test.py
+        run: python3 manage.py runserver 0.0.0.0:8000 && python3 test.py
         env:
           PG_DBNAME: basic
           PG_USER: basic
