@@ -5,4 +5,4 @@ r = requests.post("http://127.0.0.1:8000/person",data={
     "last_name": "13123",
     "email":"ased"
 })
-print(r.status_code)
+return r.status_code
