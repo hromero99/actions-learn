@@ -5,4 +5,5 @@ r = requests.post("http://127.0.0.1:8000/person",data={
     "last_name": "13123",
     "email":"ased"
 })
-exit(r.status_code)
+if r.status_code != 201:
+    exit(r.status_code)
