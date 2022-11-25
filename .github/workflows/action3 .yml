@@ -1,5 +1,9 @@
 name: install-requirements
-on: [push]
+on: 
+  pull_request:
+  push:
+    branches: 
+      - prod
 jobs:
   build-image-requirements:
     runs-on: ubuntu-latest
