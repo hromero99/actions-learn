@@ -5,6 +5,7 @@ r = requests.post("http://127.0.0.1:8000/person",data={
     "last_name": "13123",
     "email":"ased"
 })
+print(r.status_code)
 if r.status_code != 201 or r.status_code != 200:
     exit(1)
 exit(0)
