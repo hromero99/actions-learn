@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches: 
-      - prod
+      - master
 jobs:
   build-image-requirements:
     runs-on: ubuntu-latest
