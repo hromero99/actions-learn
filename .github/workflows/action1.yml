@@ -16,4 +16,4 @@ jobs:
            username: ${{ secrets.USERNAME }}
            key: ${{ secrets.SSH_SECRET_KEY }}
            script: |
-                sudo apt install -y git && git clone https://github.com/Cuadri84/hotel-miranda-dashboard
+                cd /home/user/hotel-miranda-dashboard && git pull
