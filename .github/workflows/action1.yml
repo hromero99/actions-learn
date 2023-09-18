@@ -1,19 +1,10 @@
 name: first-action
 on: 
-  pull_request:
-  push:
-    branches: 
-      - master
+  push: 
+    branches:
+      - "master"
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: multiple host
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-           host: ${{secrets.SERVER_ADDR }}
-           username: ${{ secrets.USERNAME }}
-           key: ${{ secrets.SSH_SECRET_KEY }}
-           script: |
-                cd /home/ubuntu/hotel-miranda-dashboard && git pull
+      - run: apt update
