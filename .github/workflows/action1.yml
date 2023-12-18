@@ -4,7 +4,7 @@ on:
     branches:
       - "master"
 jobs:
-  check-bats-version:
+  show-files-container:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
