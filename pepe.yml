@@ -10,3 +10,7 @@ jobs:
           node-version: '21.2.0'
       - name: Install requirements
         run: npm install
+      - name: Build the project
+        run: npm run build
+        env: 
+          SECRET_KEY: ${{ secrets.secret_key }}
