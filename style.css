@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+}
+
+.header {
+  width: 100%;
+  padding: 1em;
+}
+.header__button {
+  padding: 0.5em;
+  font-size: 20px;
+}
+.header__button--primary {
+  color: red;
+}
+.header__button--secondary {
+  color: blue;
+}
+
+/*# sourceMappingURL=style.css.map */
