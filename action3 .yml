@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - master
+      - stable
 jobs:
   build-image-requirements:
     runs-on: ubuntu-latest
